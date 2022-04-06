@@ -65,13 +65,13 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i>
-            <span>Pasien Booking</span>
+            <span>Pasien</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/regis'?>"><i class="fa fa-star-o"></i>Pendaftaran Pasien</a></li>
+            <li><a href="<?php echo base_url().'admin/daftar'?>"><i class="fa fa-user"></i>Pendaftaran Pasien</a></li>
           </ul>
         </li>
         <li>

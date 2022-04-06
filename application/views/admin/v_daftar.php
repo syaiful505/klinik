@@ -511,16 +511,16 @@
 
 
 		<?php foreach ($data->result_array() as $i) :
-              $kode=$i['agenda_id'];
-              $agenda_mulai=$i['agenda_mulai'];
-              $agenda_selesai=$i['agenda_selesai'];
-              $agenda_tempat=$i['agenda_tempat'];
-              $agenda_waktu=$i['agenda_waktu'];
-              $agenda_keterangan=$i['agenda_keterangan'];
-              $agenda_author=$i['agenda_author'];
-              $tangal=$i['tanggal'];
-              $agenda_dokter_id=$i['agenda_dokter_id'];
-              $agenda_dokter_nama=$i['dokter_nama']
+            $kode=$i['pasiennew_id'];
+            $pasien_nama=$i['pasiennew_nama'];
+            $pasien_jenkel=$i['pasiennew_jenkel'];
+            $pasien_alamat=$i['pasiennew_alamat'];
+            $pasien_dokter_id=$i['pasiennew_dokter_id'];
+            $pasien_dokter_nama=$i['dokter_nama'];
+            $pasien_dokter_specialist=$i['dokter_specialist'];
+            $tanggal=$i['pasiennew_tgl_input'];
+            $pasien_wa=$i['pasiennew_wa'];
+            $pasien_ket=$i['pasiennew_ket'];
             ?>
 	<!--Modal Edit Pengguna-->
         <div class="modal fade" id="ModalEdit<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -528,11 +528,52 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Agenda</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Pasien</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/update_agenda'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/daftar/update_pasien'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-
+                        <div class="form-group">
+                          <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
+                          <div class="col-sm-7">
+                              <input type="text" name="xnama" value="<?php echo $pasien_nama;?>" class="form-control" id="inputUserName" placeholder="Nama" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                              <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
+                              <div class="col-sm-7">
+                                <?php if($pasien_jenkel=='L'):?> 
+                                <div class="radio radio-info radio-inline">
+                                      <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
+                                      <label for="inlineRadio1"> Laki-Laki </label>
+                                  </div>
+                                  <div class="radio radio-info radio-inline">
+                                      <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
+                                      <label for="inlineRadio2"> Perempuan </label>
+                                  </div>
+                                <?php else:?>
+                                  <div class="radio radio-info radio-inline">
+                                      <input type="radio" id="inlineRadio1" value="L" name="xjenkel">
+                                      <label for="inlineRadio1"> Laki-Laki </label>
+                                  </div>
+                                  <div class="radio radio-info radio-inline">
+                                      <input type="radio" id="inlineRadio1" value="P" name="xjenkel" checked>
+                                      <label for="inlineRadio2"> Perempuan </label>
+                                  </div>
+                                <?php endif;?>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                          <label for="inputUserName" class="col-sm-4 control-label">Alamat</label>
+                          <div class="col-sm-7">
+                              <input type="text" name="xalamat" value="<?php echo $pasien_alamat;?>" class="form-control" id="inputUserName" placeholder="Alamat" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-4 control-label">No Hp/WhatsApp</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="xwa" class="form-control" value="<?php echo $pasien_wa;?>" id="inputUserName" placeholder="No HP" required>
+                            </div>
+                        </div>
                           <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Nama Dokter</label>
                                 <div class="col-sm-7">
@@ -543,7 +584,7 @@
                                       foreach ($dok->result_array() as $a) {
                                                   $dok_id=$a['dokter_id'];
                                                   $dok_nama=$a['dokter_nama'];
-                                                  if($agenda_dokter_id==$dok_id)
+                                                  if($pasien_dokter_id==$dok_id)
                                                       echo "<option value='$dok_id' selected>$dok_nama</option>";
                                                   else
                                                       echo "<option value='$dok_id'>$dok_nama</option>";
@@ -551,52 +592,10 @@
                                   </select>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                              <label for="inputUserName" class="col-sm-4 control-label">Mulai</label>
-                              <div class="col-sm-7">
-                                <div class="input-group date">
-                                  <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                  </div>
-                                  <input type="text" name="xmulai" value="<?php echo $agenda_mulai;?>" class="form-control pull-right datepicker3" required>
-                                </div>
-                              </div>
-                              <!-- /.input group -->
-                            </div>
-                            <!-- /.form group -->
-
-                            <!-- Date range -->
-                            <div class="form-group">
-                             <label for="inputUserName" class="col-sm-4 control-label">Selesai</label>
-                              <div class="col-sm-7">
-                                <div class="input-group date">
-                                  <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                  </div>
-                                  <input type="text" name="xselesai" value="<?php echo $agenda_selesai;?>" class="form-control pull-right datepicker4" required>
-                                </div>
-                              </div>
-                              <!-- /.input group -->
-                            </div>
-                            <!-- /.form group -->
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Tempat</label>
-                                <div class="col-sm-7">
-                                  <input type="text" name="xtempat" class="form-control" value="<?php echo $agenda_tempat;?>" id="inputUserName" placeholder="Tempat" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Waktu</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xwaktu" class="form-control" value="<?php echo $agenda_waktu;?>" id="inputUserName" placeholder="Contoh: 10.30-11.00 WIB" required>
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Keterangan</label>
                                 <div class="col-sm-7">
-                                  <textarea class="form-control" name="xketerangan" rows="2" placeholder="Keterangan ..."><?php echo $agenda_keterangan;?></textarea>
+                                  <textarea class="form-control" name="xket" rows="2" placeholder="Keterangan ..."><?php echo $pasien_ket;?></textarea>
                                 </div>
                             </div>
 
@@ -612,18 +611,16 @@
 	<?php endforeach;?>
 
 	<?php foreach ($data->result_array() as $i) :
-              $kode=$i['agenda_id'];
-              $agenda_nama=$i['agenda_nama'];
-              $agenda_deskripsi=$i['agenda_deskripsi'];
-              $agenda_mulai=$i['agenda_mulai'];
-              $agenda_selesai=$i['agenda_selesai'];
-              $agenda_tempat=$i['agenda_tempat'];
-              $agenda_waktu=$i['agenda_waktu'];
-              $agenda_keterangan=$i['agenda_keterangan'];
-              $agenda_author=$i['agenda_author'];
-              $tangal=$i['tanggal'];
-              $agenda_dokter_id=$i['agenda_dokter_id'];
-              $agenda_dokter_nama=$i['dokter_nama']
+            $kode=$i['pasiennew_id'];
+            $pasien_nama=$i['pasiennew_nama'];
+            $pasien_jenkel=$i['pasiennew_jenkel'];
+            $pasien_alamat=$i['pasiennew_alamat'];
+            $pasien_dokter_id=$i['pasiennew_dokter_id'];
+            $pasien_dokter_nama=$i['dokter_nama'];
+            $pasien_dokter_specialist=$i['dokter_specialist'];
+            $tanggal=$i['pasiennew_tgl_input'];
+            $pasien_wa=$i['pasiennew_wa'];
+            $pasien_ket=$i['pasiennew_ket'];
             ?>
 	<!--Modal Hapus Pengguna-->
         <div class="modal fade" id="ModalHapus<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -631,12 +628,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Agenda</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Pasien</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/hapus_agenda'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/daftar/hapus_pasien'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							          <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
-                            <p>Apakah Anda yakin mau menghapus Pengguna <b><?php echo $agenda_nama;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus Pengguna <b><?php echo $pasien_nama;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

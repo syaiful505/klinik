@@ -26,4 +26,22 @@ class Daftar extends CI_Controller{
         echo $this->session->set_flashdata('msg', 'success');
         redirect('admin/daftar');
     }
+    function update_pasien(){
+        $kode=strip_tags($this->input->post('kode'));
+        $nama=$this->input->post('xnama');
+        $jenkel=$this->input->post('xjenkel');
+        $alamat=$this->input->post('xalamat');
+        $wa=$this->input->post('xwa');
+        $dokter=strip_tags($this->input->post('xdokter'));
+        $ket=$this->input->post('xket');
+        $this->m_daftar->update_pasien($kode,$nama,$jenkel,$alamat,$wa,$dokter,$ket);
+        echo $this->session->set_flashdata('msg', 'info');
+        redirect('admin/daftar');
+    }
+    function hapus_pasien(){
+        $kode=strip_tags($this->input->post('kode'));
+        $this->m_daftar->hapus_pasien($kode);
+        echo $this->session->set_flashdata('msg', 'success-hapus');
+        redirect('admin/daftar');
+    }
 }
