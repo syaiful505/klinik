@@ -2,7 +2,7 @@
 class M_agenda extends CI_Model{
 
 	function get_all_agenda(){
-		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal,dokter_nama FROM tbl_agenda JOIN tbl_dokter ON agenda_dokter_id=dokter_id ORDER BY agenda_id DESC");
+		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal,dokter_nama,dokter_specialist FROM tbl_agenda JOIN tbl_dokter ON agenda_dokter_id=dokter_id ORDER BY agenda_id DESC");
 		return $hsl;
 	}
 	function simpan_agenda($dokter,$mulai,$selesai,$tempat,$waktu,$keterangan){
@@ -22,15 +22,15 @@ class M_agenda extends CI_Model{
 
 	//front-end
 	function get_agenda_home(){
-		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_agenda ORDER BY agenda_id DESC limit 3");
+		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal,dokter_nama,dokter_specialist FROM tbl_agenda JOIN tbl_dokter ON agenda_dokter_id=dokter_id ORDER BY agenda_id DESC limit 3");
 		return $hsl;
 	}
 	function agenda(){
-		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_agenda ORDER BY agenda_id DESC");
+		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal,dokter_nama,dokter_specialist FROM tbl_agenda JOIN tbl_dokter ON agenda_dokter_id=dokter_id ORDER BY agenda_id DESC");
 		return $hsl;
 	}
 	function agenda_perpage($offset,$limit){
-		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_agenda ORDER BY agenda_id DESC limit $offset,$limit");
+		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal,dokter_nama,dokter_specialist FROM tbl_agenda JOIN tbl_dokter ON agenda_dokter_id=dokter_id ORDER BY agenda_id DESC limit $offset,$limit");
 		return $hsl;
 	}
 

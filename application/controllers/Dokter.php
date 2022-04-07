@@ -1,5 +1,5 @@
 <?php
-class Guru extends CI_Controller{
+class Dokter extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_dokter');
@@ -7,7 +7,7 @@ class Guru extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$jum=$this->m_guru->guru();
+		$jum=$this->m_dokter->dokter();
         $page=$this->uri->segment(3);
         if(!$page):
             $offset = 0;
@@ -15,7 +15,7 @@ class Guru extends CI_Controller{
             $offset = $page;
         endif;
         $limit=8;
-        $config['base_url'] = base_url() . 'guru/index/';
+        $config['base_url'] = base_url() . 'dokter/index/';
             $config['total_rows'] = $jum->num_rows();
             $config['per_page'] = $limit;
             $config['uri_segment'] = 3;
@@ -41,8 +41,8 @@ class Guru extends CI_Controller{
             $config['prev_link'] = '<< Prev';
             $this->pagination->initialize($config);
             $x['page'] =$this->pagination->create_links();
-						$x['data']=$this->m_guru->guru_perpage($offset,$limit);
-						$this->load->view('depan/v_guru',$x);
+						$x['data']=$this->m_dokter->dokter_perpage($offset,$limit);
+						$this->load->view('depan/v_dokter',$x);
 	}
 
 }

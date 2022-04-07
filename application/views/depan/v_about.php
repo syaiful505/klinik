@@ -31,28 +31,28 @@
                 <div class="col-xs-6 col-sm-8 col-md-9">
                     <div class="header-top_address">
                         <div class="header-top_list">
-                            <span class="icon-phone"></span>+62857-1062-9041
+                            <span class="icon-phone"></span>+62897-9817-173
                         </div>
                         <div class="header-top_list">
-                            <span class="icon-envelope-open"></span>sdinurulkarimah21@gmail.com
+                            <span class="icon-envelope-open"></span>syaifulstyle505@gmail.com
                         </div>
                         <div class="header-top_list">
-                            <span class="icon-location-pin"></span>Parung
+                            <span class="icon-location-pin"></span>Tigaraksa
                         </div>
                     </div>
                     <div class="header-top_login2">
-                        <a href="<?php echo site_url('regis');?>">REGISTRASI</a>
+                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="header-top_login mr-sm-3">
-                        <a href="<?php echo site_url('regis');?>">REGISTRASI</a>
+                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div data-toggle="affix" style="border-bottom:solid 1px #f2f2f2;">
+    <div data-toggle="affix">
         <div class="container nav-menu2">
             <div class="row">
                 <div class="col-md-12">
@@ -67,41 +67,27 @@
                                     <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
+                                    <a class="nav-link" href="<?php echo site_url('agenda');?>">Jadwal Dokter</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
+                                    <a class="nav-link" href="<?php echo site_url('dokter');?>">Dokter</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('berita');?>">Berita</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('agenda');?>">Agenda</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
+                                    <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('contact');?>">Contact</a>
                                 </li>
-                          </ul>
-                    </div>
-                  </nav>
+                             </ul>
+                        </div>
+                    </nav>
                 </div>
-              </div>
             </div>
-          </div>
-      <section>
-</section>
+        </div>
+      </div>
 <!--//END HEADER -->
 <!--//END ABOUT IMAGE -->
 <!--============================= WELCOME TITLE =============================-->
@@ -169,16 +155,7 @@
                         <img src="<?php echo base_url().'theme/images/chart-icon_1.png'?>" class="img-fluid" alt="chart_icon">
                     </div>
                     <div class="chart-text">
-                        <p><span class="counter"><?php echo $tot_guru;?></span> Guru
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom chart_top">
-                    <div class="chart-img">
-                        <img src="<?php echo base_url().'theme/images/chart-icon_2.png'?>" class="img-fluid" alt="chart_icon">
-                    </div>
-                    <div class="chart-text">
-                        <p><span class="counter"><?php echo $tot_siswa;?></span> Siswa
+                        <p><span class="counter"><?php echo $tot_dokter;?></span> Dokter
                         </p>
                     </div>
                 </div>
@@ -187,16 +164,7 @@
                         <img src="<?php echo base_url().'theme/images/chart-icon_3.png'?>" class="img-fluid" alt="chart_icon">
                     </div>
                     <div class="chart-text">
-                        <p><span class="counter"><?php echo $tot_files;?></span> Download
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="chart-img">
-                        <img src="<?php echo base_url().'theme/images/chart-icon_4.png'?>" class="img-fluid" alt="chart_icon">
-                    </div>
-                    <div class="chart-text">
-                        <p><span class="counter"><?php echo $tot_agenda;?></span> Agenda</p>
+                    <p><span class="counter"><?php echo $tot_agenda;?></span> Jadwal Dokter</p>
                     </div>
                 </div>
             </div>
@@ -213,7 +181,7 @@
                             <!-- <a href="<?php echo site_url();?>">
                                 <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
                             </a> -->
-                            <p><?php echo date('Y');?> © copyright by TeamPKM.Unpam
+                            <p><?php echo date('Y');?> © copyright by Sabil Clinic
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -223,20 +191,16 @@
                                     <li><a href="<?php echo site_url();?>">Home</a></li>
                                     <li><a href="<?php echo site_url('about');?>">About</a></li>
                                     <li><a href="<?php echo site_url('artikel');?>">Berita </a></li>
-                                    <li><a href="<?php echo site_url('galeri');?>">Gallery</a></li>
                                     <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-3">
                           <div class="sitemap">
-                              <h3>Akademik</h3>
+                              <h3>Info</h3>
                               <ul>
-                                  <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                                  <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
-                                  <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
-                                  <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                                  <li><a href="<?php echo site_url('download');?>">Download</a></li>
+                                  <li><a href="<?php echo site_url('dokter');?>">Dokter</a></li>
+                                  <li><a href="<?php echo site_url('agenda');?>">Jadwal Dokter</a></li>
                               </ul>
                           </div>
                         </div>

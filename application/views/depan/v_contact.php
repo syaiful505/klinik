@@ -24,82 +24,68 @@
 <body>
   <!--============================= HEADER =============================-->
   <div class="header-topbar">
-      <div class="container">
-          <div class="row">
-              <div class="col-xs-6 col-sm-8 col-md-9">
-                  <div class="header-top_address">
-                      <div class="header-top_list">
-                          <span class="icon-phone"></span>+62857-1062-9041
-                      </div>
-                      <div class="header-top_list">
-                          <span class="icon-envelope-open"></span>sdinurulkarimah21@gmail.com
-                      </div>
-                      <div class="header-top_list">
-                          <span class="icon-location-pin"></span>Parung
-                      </div>
-                  </div>
-                  <div class="header-top_login2">
-                        <a href="<?php echo site_url('regis');?>">REGISTRASI</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-8 col-md-9">
+                    <div class="header-top_address">
+                        <div class="header-top_list">
+                            <span class="icon-phone"></span>+62897-9817-173
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-envelope-open"></span>syaifulstyle505@gmail.com
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-location-pin"></span>Tigaraksa
+                        </div>
+                    </div>
+                    <div class="header-top_login2">
+                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="header-top_login mr-sm-3">
-                        <a href="<?php echo site_url('regis');?>">REGISTRASI</a>
+                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
                     </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div data-toggle="affix" style="border-bottom:solid 1px #f2f2f2;">
-      <div class="container nav-menu2">
-          <div class="row">
-              <div class="col-md-12">
-                  <nav class="navbar navbar2 navbar-toggleable-md navbar-light bg-faded">
-                      <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-                          <span class="icon-menu"></span>
-                      </button>
-                     <!--  <a href="<?php echo site_url('');?>" class="navbar-brand nav-brand2"><img class="img img-responsive" width="200px;" src="<?php echo base_url().'theme/images/logo-dark.png'?>"></a> -->
-                      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                          <ul class="navbar-nav">
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('berita');?>">Berita</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('agenda');?>">Agenda</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('contact');?>">Contact</a>
-                              </li>
-                        </ul>
-                  </div>
-                </nav>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-    <section>
-</section>
+    </div>
+    <div data-toggle="affix">
+        <div class="container nav-menu2">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar2 navbar-toggleable-md navbar-light bg-faded">
+                        <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                            <span class="icon-menu"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('agenda');?>">Jadwal Dokter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('dokter');?>">Dokter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('berita');?>">Berita</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="<?php echo site_url('contact');?>">Contact</a>
+                                </li>
+                             </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+      </div>
 <!--//END HEADER -->
 <section class="contact">
     <div class="container">
@@ -187,7 +173,7 @@
                         <!-- <a href="<?php echo site_url();?>">
                             <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo"> -->
                         </a>
-                        <p><?php echo date('Y');?> © copyright by TeamPKM.Unpam</p>
+                        <p><?php echo date('Y');?> © copyright by Sabil Clinic</p>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -197,20 +183,16 @@
                                 <li><a href="<?php echo site_url();?>">Home</a></li>
                                 <li><a href="<?php echo site_url('about');?>">About</a></li>
                                 <li><a href="<?php echo site_url('artikel');?>">Berita </a></li>
-                                <li><a href="<?php echo site_url('galeri');?>">Gallery</a></li>
                                 <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3">
                       <div class="sitemap">
-                          <h3>Akademik</h3>
+                          <h3>Info</h3>
                           <ul>
-                              <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                              <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
-                              <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
-                              <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                              <li><a href="<?php echo site_url('download');?>">Download</a></li>
+                              <li><a href="<?php echo site_url('dokter');?>">Dokter</a></li>
+                              <li><a href="<?php echo site_url('agenda');?>">Jadwal Dokter</a></li>
                           </ul>
                       </div>
                     </div>
