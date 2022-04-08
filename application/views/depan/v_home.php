@@ -306,9 +306,9 @@
                             $no++;
                                     $dok_id=$a['dokter_id'];
                                     $dok_nama=$a['dokter_nama'];
-
+                                    $dok_specialist=$a['dokter_specialist'];
                                 ?>
-                            <option value="<?php echo $dok_id;?>"><?php echo $dok_nama;?></option>
+                            <option value="<?php echo $dok_id;?>"><?php echo $dok_nama.'&nbsp&nbsp&nbsp ('.$dok_specialist;?>)</option>
                         <?php endforeach;?>
                     </select>
                 </div>
@@ -368,7 +368,7 @@
                     <script type="text/javascript">
                             $.toast({
                                 heading: 'Success',
-                                text: "Data Berhasil disimpan.",
+                                text: "Data Berhasil disimpan. tunggu ada notifikasi WA dari kami, Terimakasih",
                                 showHideTransition: 'slide',
                                 icon: 'success',
                                 hideAfter: false,
