@@ -31,13 +31,10 @@
                 <div class="col-xs-6 col-sm-8 col-md-9">
                     <div class="header-top_address">
                         <div class="header-top_list">
-                            <span class="icon-phone"></span>+62897-9817-173
+                            <span class="icon-phone"></span>(021) 5991735
                         </div>
                         <div class="header-top_list">
-                            <span class="icon-envelope-open"></span>syaifulstyle505@gmail.com
-                        </div>
-                        <div class="header-top_list">
-                            <span class="icon-location-pin"></span>Tigaraksa
+                            <span class="icon-location-pin"></span>Tigaraksa, Tangerang
                         </div>
                     </div>
                     <div class="header-top_login2">
@@ -128,7 +125,7 @@
                         <!-- <a href="<?php echo site_url();?>">
                             <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
                         </a> -->
-                        <p><?php echo date('Y');?> © copyright by TeamPKM.Unpam
+                        <p><?php echo date('Y');?> © copyright by Sabil Medika
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -154,9 +151,8 @@
                     <div class="col-md-3">
                         <div class="address">
                             <h3>Hubungi Kami</h3>
-                            <p><span>Alamat: </span> Parung</p>
-                            <p>Email : sdinurulkarimah21@gmail.com
-                                <br> Phone : +62857-1062-9041</p>
+                            <p><span>Alamat: </span> Tigaraksa</p>
+                            <p>Phone : (021) 5991735</p>
                                 <ul class="footer-social-icons">
                                     <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                     <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>

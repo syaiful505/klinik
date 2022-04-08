@@ -15,11 +15,14 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/font-awesome.min.css'?>">
     <!-- Simple Line Font -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/simple-line-icons.css'?>">
+    <!-- Databales -->
+    <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/datatables/dataTables.bootstrap.css'?>">
     <!-- Slider / Carousel -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.css'?>"/>
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
     <?php
         function limit_words($string, $word_limit){
@@ -36,23 +39,17 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-8 col-md-9">
                     <div class="header-top_address">
-                        <div class="header-top_list">
-                            <span class="icon-phone"></span>+62897-9817-173
-                        </div>
-                        <div class="header-top_list">
-                            <span class="icon-envelope-open"></span>syaifulstyle505@gmail.com
-                        </div>
-                        <div class="header-top_list">
-                            <span class="icon-location-pin"></span>Tigaraksa
-                        </div>
-                    </div>
-                    <div class="header-top_login2">
-                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
+                    <a class="btn btn-success btn-flat text-center" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> DAFTAR </a> 
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="header-top_login mr-sm-3">
-                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
+                        <div class="header-top_list">
+                            <span class="icon-phone"></span>(021) 5991735
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-location-pin"></span>Tigaraksa, Tangerang
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,34 +184,8 @@
     </div>
 </section>
 <!--//END OUR COURSES -->
-<!--============================= EVENTS =============================-->
-<section class="event">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-md-12">
-                    <?php foreach ($agenda->result() as $row):?>
-                        <div class="event_date">
-                            <div class="event-date-wrap">
-                                <p><?php echo date("d", strtotime($row->agenda_tanggal));?></p>
-                                <span><?php echo date("M. y", strtotime($row->agenda_tanggal));?></span>
-                            </div>
-                        </div>
-                        <div class="date-description">
-                            <h3><a href="<?php echo site_url('agenda');?>"><?php echo $row->dokter_nama;?></a></h3>
-                            <p><?php echo limit_words($row->agenda_keterangan,10).'...';?></p>
-                            <hr class="event_line">
-                        </div>
-                        <?php endforeach;?>
+<!--============================= Table Jadwal Dokter EVENTS =============================-->
 
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
 <!--============================= DETAILED CHART =============================-->
 <div class="detailed_chart">
         <div class="container">
@@ -250,7 +221,7 @@
                    <!--  <a href="<?php echo site_url();?>">
                         <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
                     </a> -->
-                    <p><?php echo date('Y');?> © copyright by Sabil Clinic <br>All rights reserved.</p>
+                    <p><?php echo date('Y');?> © copyright by Sabil Medika <br>All rights reserved.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -277,9 +248,8 @@
                 <div class="col-md-3">
                     <div class="address">
                         <h3>Hubungi Kami</h3>
-                        <p><span>Alamat: </span>Parung</p>
-                        <p>Email : sdinurulkarimah21@gmail.com
-                            <br> Phone : +62857-1062-9041</p>
+                        <p><span>Alamat: </span>Tigaraksa</p>
+                        <p>Phone : (021) 5991735</p>
                             <ul class="footer-social-icons">
                                 <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
@@ -291,10 +261,83 @@
             </div>
         </footer>
         <!--//END FOOTER -->
+        <!-- Modal Tambah -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Pendaftaran Pasien</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="form-horizontal" action="<?php echo base_url().'home/simpan_pasien'?>" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="inputUserName" class="col-form-label">Nama:</label>
+                    <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName" class="col-form-label">Jenis Kelamin:</label>
+                    <div class="col-sm-7">
+                        <div class="radio radio-info radio-inline">
+                            <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
+                            <label for="inlineRadio1"> Laki-Laki </label>
+                        </div>
+                        <div class="radio radio-info radio-inline">
+                            <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
+                            <label for="inlineRadio2"> Perempuan </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName" class="col-form-label">Alamat:</label>
+                    <input type="text" name="xalamat" class="form-control" id="inputUserName" placeholder="Alamat" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName" class="col-form-label">No HP/WhatsApp:</label>
+                    <input type="text" name="xwa" class="form-control" id="inputUserName" placeholder="No Wa: 6289123123" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName" class="col-form-label">Nama Dokter:</label>
+                    <select class="form-control" name="xdokter" style="width: 100%;" required>
+                    <option value="">-Pilih-</option>
+                        <?php
+                        $no=0;
+                        foreach ($dok->result_array() as $a) :
+                            $no++;
+                                    $dok_id=$a['dokter_id'];
+                                    $dok_nama=$a['dokter_nama'];
+
+                                ?>
+                            <option value="<?php echo $dok_id;?>"><?php echo $dok_nama;?></option>
+                        <?php endforeach;?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName" class="col-form-label">Keterangan:</label>
+                    <textarea class="form-control" name="xket" rows="2" placeholder="Keterangan ..."></textarea>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+            </form>
+            </div>
+        </div>
+        </div>
+        <!-- End Modal Tambah -->
         <!-- jQuery, Bootstrap JS. -->
         <script src="<?php echo base_url().'theme/js/jquery.min.js'?>"></script>
+        <!-- Bootstrap 3.3.6 -->
+        <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>"></script>
+        <!-- jQuery 2.2.3 -->
+        <script src="<?php echo base_url().'assets/plugins/jQuery/jquery-2.2.3.min.js'?>"></script> 
         <script src="<?php echo base_url().'theme/js/tether.min.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/bootstrap.min.js'?>"></script>
+        <!-- DataTables -->
+        <script src="<?php echo base_url().'assets/plugins/datatables/jquery.dataTables.min.js'?>"></script>
+        <script src="<?php echo base_url().'assets/plugins/datatables/dataTables.bootstrap.min.js'?>"></script>
         <!-- Plugins -->
         <script src="<?php echo base_url().'theme/js/slick.min.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/waypoints.min.js'?>"></script>
@@ -306,6 +349,64 @@
         <script src="<?php echo base_url().'theme/js/subscribe.js'?>"></script>
         <!-- Script JS -->
         <script src="<?php echo base_url().'theme/js/script.js'?>"></script>
-    </body>
+        <!-- AdminLTE for demo purposes -->
+        <script src="<?php echo base_url().'assets/dist/js/demo.js'?>"></script>
+        <script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script>
+
+        <?php if($this->session->flashdata('msg')=='error'):?>
+                    <script type="text/javascript">
+                            $.toast({
+                                heading: 'Error',
+                                text: "Password dan Ulangi Password yang Anda masukan tidak sama.",
+                                showHideTransition: 'slide',
+                                icon: 'error',
+                                hideAfter: false,
+                                position: 'bottom-right',
+                                bgColor: '#FF4859'
+                            });
+                    </script>
+
+                <?php elseif($this->session->flashdata('msg')=='success'):?>
+                    <script type="text/javascript">
+                            $.toast({
+                                heading: 'Success',
+                                text: "Data Berhasil disimpan.",
+                                showHideTransition: 'slide',
+                                icon: 'success',
+                                hideAfter: false,
+                                position: 'bottom-right',
+                                bgColor: '#7EC857'
+                            });
+                    </script>
+                <?php elseif($this->session->flashdata('msg')=='info'):?>
+                    <script type="text/javascript">
+                            $.toast({
+                                heading: 'Info',
+                                text: "Data berhasil di update",
+                                showHideTransition: 'slide',
+                                icon: 'info',
+                                hideAfter: false,
+                                position: 'bottom-right',
+                                bgColor: '#00C9E6'
+                            });
+                    </script>
+                <?php elseif($this->session->flashdata('msg')=='success-hapus'):?>
+                    <script type="text/javascript">
+                            $.toast({
+                                heading: 'Success',
+                                text: "Data Berhasil dihapus.",
+                                showHideTransition: 'slide',
+                                icon: 'success',
+                                hideAfter: false,
+                                position: 'bottom-right',
+                                bgColor: '#7EC857'
+                            });
+                    </script>
+                <?php else:?>
+
+                <?php endif;?>
+                <!-- End Function.nya -->
+            <script>$('#myModal').modal(options)</script>
+            </body>
 
     </html>

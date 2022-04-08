@@ -160,7 +160,7 @@
 
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Agenda</a>
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span>Tambah Pasien Baru</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
