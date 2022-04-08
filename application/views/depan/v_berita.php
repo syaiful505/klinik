@@ -162,9 +162,7 @@
                         <p><span>Alamat: </span> Parung</p>
                         <p>Phone : (021) 5991735</p>
                             <ul class="footer-social-icons">
-                                <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://www.linkedin.com/in/muhammad-syaiful-karim-388a29150/"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -88,10 +88,11 @@
                 <table id="example1" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th style='width: 25rem'>Nama Dokter</th>
-                            <th style='width: 25rem'>Tanggal</th>
-                            <th style='width: 25rem'>Tempat</th>
-                            <th style='width: 25rem'>Waktu</th>
+                            <th style='width: 20rem'>Nama Dokter</th>
+                            <th style='width: 20rem'>Specialist</th>
+                            <th style='width: 20rem'>Tanggal</th>
+                            <th style='width: 20rem'>Tempat</th>
+                            <th style='width: 20rem'>Waktu</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -109,9 +110,11 @@
                        $tanggal=$i['tanggal'];
                        $agenda_dokter_id=$i['agenda_dokter_id'];
                        $agenda_dokter_nama=$i['dokter_nama'];
+                       $agenda_dokter_specialist=$i['dokter_specialist'];
                     ?>
                             <tr>
                                 <td><?php echo $agenda_dokter_nama;?></td>
+                                <td><?php echo $agenda_dokter_specialist;?></td>
                                 <td><?php echo $agenda_mulai.' s/d '.$agenda_selesai;?></td>
                                 <td><?php echo $agenda_tempat;?></td>
                                 <td><?php echo $agenda_waktu;?></td>
@@ -163,11 +166,11 @@
                         <h3>Hubungi Kami</h3>
                         <p><span>Alamat: </span> Tigaraksa</p>
                         <p>Phone : (021) 5991735</p>
-                            <ul class="footer-social-icons">
-                                <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
-                            </ul>
+                        <ul class="footer-social-icons">
+                        <li><a href="https://www.linkedin.com/in/muhammad-syaiful-karim-388a29150/"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
+<!--                                        <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
+-->                      </ul>
                         </div>
                     </div>
                 </div>
