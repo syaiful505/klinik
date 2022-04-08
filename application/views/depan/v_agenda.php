@@ -25,30 +25,6 @@
 
 <body>
   <!--============================= HEADER =============================-->
-  <div class="header-topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-sm-8 col-md-9">
-                    <div class="header-top_address">
-                        <div class="header-top_list">
-                            <span class="icon-phone"></span>(021) 5991735
-                        </div>
-                        <div class="header-top_list">
-                            <span class="icon-location-pin"></span>Tigaraksa, Tangerang
-                        </div>
-                    </div>
-                    <div class="header-top_login2">
-                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                    <div class="header-top_login mr-sm-3">
-                        <a href="<?php echo site_url('daftar');?>">DAFTAR</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div data-toggle="affix">
         <div class="container nav-menu2">
             <div class="row">
@@ -108,26 +84,42 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane active" id="upcoming-events" role="tabpanel">
-                  <?php foreach($data->result() as $row):?>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="event-date">
-                                    <h4><?php echo date("d", strtotime($row->agenda_tanggal));?></h4> <span><?php echo date("M Y", strtotime($row->agenda_tanggal));?></span>
-                                </div>
-                                <span class="event-time"><?php echo $row->agenda_waktu;?></span>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="event-heading">
-                                    <h3><?php echo $row->dokter_nama;?></h3>
-                                    <p><?php echo $row->dokter_specialist;?></p>
-                                </div>
-                            </div>
-                      </div>
-                      <hr class="event-underline">
-                  
-                  </div>
-                <?php endforeach;?>
+                <div class="box-body">    
+                <table id="example1" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th style='width: 25rem'>Nama Dokter</th>
+                            <th style='width: 25rem'>Tanggal</th>
+                            <th style='width: 25rem'>Tempat</th>
+                            <th style='width: 25rem'>Waktu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+					$no=0;
+  					foreach ($data->result_array() as $i) :
+  					   $no++;
+                       $kode=$i['agenda_id'];
+                       $agenda_mulai=$i['agenda_mulai'];
+                       $agenda_selesai=$i['agenda_selesai'];
+                       $agenda_tempat=$i['agenda_tempat'];
+                       $agenda_waktu=$i['agenda_waktu'];
+                       $agenda_keterangan=$i['agenda_keterangan'];
+                       $agenda_author=$i['agenda_author'];
+                       $tanggal=$i['tanggal'];
+                       $agenda_dokter_id=$i['agenda_dokter_id'];
+                       $agenda_dokter_nama=$i['dokter_nama'];
+                    ?>
+                            <tr>
+                                <td><?php echo $agenda_dokter_nama;?></td>
+                                <td><?php echo $agenda_mulai.' s/d '.$agenda_selesai;?></td>
+                                <td><?php echo $agenda_tempat;?></td>
+                                <td><?php echo $agenda_waktu;?></td>
+                            </tr>
+                            <?php endforeach;?>
+                            </tbody>
+                    </table>
+                    </div>
                 <div class="col-md-12 text-center">
                     <?php echo $page;?>
                 </div>
