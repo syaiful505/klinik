@@ -143,7 +143,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Jadwal Dokter (Deleted Update)
+        Data Jadwal Dokter
         <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -160,7 +160,7 @@
 
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Agenda</a>
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span>Tambah Jadwal Dokter</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -169,6 +169,7 @@
                 <tr>
 					          <th style="width:70px;">Created Date</th>
                     <th>Nama Dokter</th>
+                    <th>Specialist</th>
                     <th>Tanggal</th>
                     <th>Tempat</th>
                     <th>Waktu</th>
@@ -191,10 +192,12 @@
                        $tanggal=$i['tanggal'];
                        $agenda_dokter_id=$i['agenda_dokter_id'];
                        $agenda_dokter_nama=$i['dokter_nama'];
+                       $agenda_dokter_specialist=$i['dokter_specialist'];
                     ?>
                 <tr>
                   <td><?php echo $tanggal;?></td>
                   <td><?php echo $agenda_dokter_nama;?></td>
+                  <td><?php echo $agenda_dokter_specialist;?></td>
                   <td><?php echo $agenda_mulai.' s/d '.$agenda_selesai;?></td>
                   <td><?php echo $agenda_tempat;?></td>
                   <td><?php echo $agenda_waktu;?></td>
@@ -428,7 +431,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Agenda</h4>
+                        <h4 class="modal-title" id="myModalLabel">Tambah Jadwal Dokter</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/simpan_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -495,7 +498,7 @@
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Keterangan</label>
                                 <div class="col-sm-7">
-                                  <textarea class="form-control" name="xketerangan" rows="2" placeholder="Keterangan ..."></textarea>
+                                <textarea class="form-control" name="xketerangan" rows="2" placeholder="Keterangan ..."></textarea>
                                 </div>
                             </div>
 
@@ -520,7 +523,7 @@
               $agenda_author=$i['agenda_author'];
               $tangal=$i['tanggal'];
               $agenda_dokter_id=$i['agenda_dokter_id'];
-              $agenda_dokter_nama=$i['dokter_nama']
+              $agenda_dokter_nama=$i['dokter_nama'];
             ?>
 	<!--Modal Edit Pengguna-->
         <div class="modal fade" id="ModalEdit<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -528,11 +531,11 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Agenda</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Jadwal Dokter</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/update_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-
+                    <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                           <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Nama Dokter</label>
                                 <div class="col-sm-7">
@@ -613,8 +616,6 @@
 
 	<?php foreach ($data->result_array() as $i) :
               $kode=$i['agenda_id'];
-              $agenda_nama=$i['agenda_nama'];
-              $agenda_deskripsi=$i['agenda_deskripsi'];
               $agenda_mulai=$i['agenda_mulai'];
               $agenda_selesai=$i['agenda_selesai'];
               $agenda_tempat=$i['agenda_tempat'];
@@ -623,7 +624,7 @@
               $agenda_author=$i['agenda_author'];
               $tangal=$i['tanggal'];
               $agenda_dokter_id=$i['agenda_dokter_id'];
-              $agenda_dokter_nama=$i['dokter_nama']
+              $agenda_dokter_nama=$i['dokter_nama'];
             ?>
 	<!--Modal Hapus Pengguna-->
         <div class="modal fade" id="ModalHapus<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -723,7 +724,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Agenda Berhasil disimpan ke database.",
+                    text: "Jadwal Dokter Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -735,7 +736,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Agenda berhasil di update",
+                    text: "Jadwal Dokter berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -747,7 +748,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Agenda Berhasil dihapus.",
+                    text: "Jadwal Dokter Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,

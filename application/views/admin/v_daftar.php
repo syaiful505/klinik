@@ -532,6 +532,7 @@
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/daftar/update_pasien'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
+                    <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                         <div class="form-group">
                           <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
                           <div class="col-sm-7">
@@ -720,7 +721,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Agenda Berhasil disimpan ke database.",
+                    text: "Data Pasien Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -732,7 +733,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Agenda berhasil di update",
+                    text: "Data Pasien berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -744,7 +745,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Agenda Berhasil dihapus.",
+                    text: "Data Pasien Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
