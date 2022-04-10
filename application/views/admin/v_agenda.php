@@ -636,7 +636,7 @@
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/hapus_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-							          <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
+							          	<input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                             <p>Apakah Anda yakin mau menghapus Pengguna <b><?php echo $agenda_nama;?></b> ?</p>
 
                     </div>

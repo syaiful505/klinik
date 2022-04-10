@@ -73,22 +73,19 @@
                   sehingga kita semua dapat membaktikan segala hal yang kita miliki untuk kemajuan dunia pendidikan.
                   Apapun bentuk dan sumbangsih yang kita berikan, jika dilandasi niat yang tulus tanpa memandang imbalan
                   apapun akan menghasilkan mahakarya yang agung untuk bekal kita dan generasi setelah kita.
-                  Pendidikan adalah harga mati untuk menjadi pondasi bangsa dan negara dalam menghadapi perkembangan zaman.
                 </p>
                 <p>Hal ini seiring dengan penguasaan teknologi untuk dimanfaatkan sebaik mungkin,
-                  sehingga menciptakan iklim kondusif dalam ranah keilmuan. Dengan konsep yang kontekstual dan efektif,
-                  kami mengejewantahkan nilai-nilai pendidikan yang tertuang dalam visi misi SDI Nurul Karimah,
-                  sebagai panduan hukum dalam menjabarkan tujuan hakiki pendidikan.
+                  sehingga menciptakan iklim kondusif dalam ranah keilmuan. Dengan konsep yang kontekstual dan efektif.
                 </p>
                 </div>
                 <div class="col-md-5">
-                    <img src="<?php echo base_url().'theme/images/KepalaSekolah.jpg'?>" class="img-fluid" alt="#">
+                    <img src="<?php echo base_url().'theme/images/depanklinik.jpg'?>" class="img-fluid" alt="#">
                 </div>
             </div>
         </div>
     </section>
     <!--//END WELCOME TITLE -->
-    <!--============================= TESTIMONIAL =============================-->
+    <!--============================= TESTIMONIAL =============================
     <section class="testimonial">
         <div class="container">
             <div class="row">
@@ -117,7 +114,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--//END TESTIMONIAL -->
     <!--============================= DETAILED CHART =============================-->
     <div class="detailed_chart">

@@ -43,7 +43,7 @@ class Agenda extends CI_Controller{
 		redirect('admin/agenda');
 	}
 	function hapus_agenda(){
-		$kode=strip_tags($this->input->post('kode'));
+		$kode=$this->input->post('kode');
 		$this->m_agenda->hapus_agenda($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('admin/agenda');
